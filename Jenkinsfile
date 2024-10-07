@@ -1,30 +1,19 @@
 pipeline {
 agent any
 stages {
-stage(“Build”) {
+stage(«Build») {
 steps {
-echo “Building…”
-// Шаги сборки
+echo «Сборка приложения...»
 }
 }
-stage(“Test”) {
+stage(«Test») {
 steps {
-echo “Testing…”
-// Шаги тестирования
+echo «Тестирование приложения...»
 }
 }
-stage(“Deploy to Staging”) {
+stage(«Deploy») {
 steps {
-echo “Deploying to Staging…”
-// Шаги развертывания на стейджинг
-sh “./deploy staging”
+echo «Развёртывание приложения...»
 }
 }
-stage(Deploy to Production') {
-steps {
-echo “Deploying to Production…”
-// Шаги развертывания на продакшн
-sh “./deploy production”
-}
-}
-}
+}}
