@@ -1,24 +1,12 @@
 pipeline {
 agent any
+environment {
+MY_GLOBAL_VARIABLE = 'value'
+}
 stages {
-stage(«Build») {
+stage('Example') {
 steps {
-echo «Сборка приложения...»
-}
-}
-stage(«Test») {
-steps {
-echo «Тестирование приложения...»
-}
-}
-stage(«Deploy») {
-steps {
-echo «Развёртывание приложения...»
-}
-}
-post {
-always {
-deleteDir()
+echo «Значение моей глобальной переменной: ${env.MY_GLOBAL_VARIABLE}»
 }
 }
 }
