@@ -1,13 +1,30 @@
 pipeline {
 agent any
-environment {
-MY_GLOBAL_VARIABLE = 'value'
-}
 stages {
-stage('Example') {
+stage(“Build”) {
 steps {
-echo «Значение моей глобальной переменной: ${env.MY_GLOBAL_VARIABLE}»
+echo “Building…”
+// Шаги сборки
 }
+}
+stage(“Test”) {
+steps {
+echo “Testing…”
+// Шаги тестирования
+}
+}
+stage(“Deploy to Staging”) {
+steps {
+echo “Deploying to Staging…”
+// Шаги развертывания на стейджинг
+sh “./deploy staging”
+}
+}
+stage(Deploy to Production') {
+steps {
+echo “Deploying to Production…”
+// Шаги развертывания на продакшн
+sh “./deploy production”
 }
 }
 }
